@@ -22,6 +22,10 @@
         $GroupChat_ID = $_GET["GroupChatID"];
         $KindofChat = $_GET["KindofChat"];
 
+        //Lade DarkMode Variabel
+
+        $DarkMode = $_GET["DarkMode"];
+
 		//Auswertung ob eine Neue Benachrichtigung vorlag oder nicht
 
 		$Notice = $_GET["Notice"];
@@ -41,6 +45,15 @@
 			}else{
 
 			}
+
+		}else{}
+
+		//Verarbeitung des DarkMode
+
+		if ($DarkMode == "aktivate") {
+			
+			//Setzen des DarkMode Cookie zum starten des Darkmode
+			setcookie("DarkMode", "DarkMode_Aktiv", 0, "/");
 
 		}else{}
 
