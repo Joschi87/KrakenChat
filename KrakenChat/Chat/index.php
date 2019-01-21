@@ -22,7 +22,7 @@
         $GroupChat_ID = $_GET["GroupChatID"];
         $KindofChat = $_GET["KindofChat"];
 
-        //Lade DarkMode Variabel
+        //Loading DarkMode variabel
 
         $DarkMode = $_GET["DarkMode"];
 
@@ -48,12 +48,12 @@
 
 		}else{}
 
-		//Verarbeitung des DarkMode
+		//Checking had the variable of the DarkMode the right value and set the cookie
 
 		if ($DarkMode == "aktivate") {
 			
 			//Setzen des DarkMode Cookie zum starten des Darkmode
-			setcookie("DarkMode", "DarkMode_Aktiv", 0, "/");
+			setcookie("DarkMode", "DarkMode_Activ", 0, "/");
 
 		}else{}
 
