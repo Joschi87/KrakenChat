@@ -2,18 +2,6 @@
 	$User = $_GET["User"];
 	$Chat_ID = $_GET["ChatID"];
 	header("refresh:5;url=loadUserChat.php?User=$User&ChatID=$Chat_ID");
-
-	//Loding of the DarkMode Cookie if he is activ
-	$DarkMode_Cookie = $_COOKIE["DarkMode"];
-
-	if ($DarkMode_Cookie == "DarkMode_Activ"){
-
-		//loading of the DarkMode.js file
-
-		echo "<script src='DarkMode.js'></script>";
-
-	}else{}
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,6 +14,18 @@
 	
 	$User = $_GET["User"];
 	$Chat_ID = $_GET["ChatID"];
+
+
+	//Loding of the DarkMode Cookie if he is activ
+	$DarkMode_Cookie = $_COOKIE["DarkMode"];
+
+	if ($DarkMode_Cookie == "aktivate"){
+
+		//loading of the DarkMode.css file
+
+		print("<link href='DarkMode.css' type='text/css' rel='stylesheet' />");
+
+	}else{}
 
 	//Sicherheitsprogramme laden
 
@@ -49,6 +49,7 @@
 
 		$Ergebins = mysqli_query($verbindung, $DB_Inhalt);
 
+		
 		echo "<div id='ChatWindow'>";
 
 		//Anzeigen des Inhaltes der Datenbank Tabelle

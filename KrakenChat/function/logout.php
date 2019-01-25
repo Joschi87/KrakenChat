@@ -24,6 +24,10 @@
         $update2 = mysqli_query($verbindung, "UPDATE login SET Zeit = '0000-00-00 00:00:00' WHERE benutzername = '$User'");
         $Aktiv = mysqli_query($verbindung, "UPDATE login SET Aktiv = 'offline' WHERE benutzername = '$User'");
         $Sessionnummer = mysqli_query($verbindung, "UPDATE login SET sessionnummer = '0' WHERE benutzername = '$User'");
+
+        //Killing of the DarkMode Cookie
+
+        setcookie("DarkMode","",time() - 3600, "/");
         
         //Eintrag in die Log File Datei
         
