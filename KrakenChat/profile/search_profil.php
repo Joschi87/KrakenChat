@@ -72,8 +72,6 @@
 			<p class="Profil_Information">Geburtstag: <?php echo $Geburtstag_DB; ?></p>
 			<p class="Profil_Information">Telefonnummer Gesch&aumlftlich: <?php echo $Telefonnummer_Beruflich_DB; ?></p>
 			<p class="Profil_Information">Telefonnummer Mobil: <?php echo $Telefonnummer_Mobil_DB; ?></p>
-			<p class="Profil_Information">Abteilung: <?php echo $Abteilung_DB; ?></p>
-			<p class="Profil_Information">Standort: <?php echo $Standort_DB; ?></p>
 		</div>
 	</div>
 </body>
