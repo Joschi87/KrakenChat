@@ -21,6 +21,11 @@
             exit();
             
         }else{
+
+            if (!preg_match("#^[a-zA-Z0-9]+$#", $user) or (!preg_match("#^[a-zA-Z0-9]+$#", $passwort))) {
+                print("Sie haben nicht erlaubte Zeichen genutzt");
+                exit();
+            }else{
             
             //Anmeldeinformationen werden in der Login Datenbank gesucht
             
@@ -162,6 +167,7 @@
                     echo "</center>";
                     echo "</html>";
                 }
+            }
         }
             
               

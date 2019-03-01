@@ -15,6 +15,18 @@
 	$User = $_GET["User"];
 	$Chat_ID = $_GET["ChatID"];
 
+
+	//Loding of the DarkMode Cookie if he is activ
+	$DarkMode_Cookie = $_COOKIE["DarkMode"];
+
+	if ($DarkMode_Cookie == "aktivate"){
+
+		//loading of the DarkMode.css file
+
+		print("<link href='DarkMode.css' type='text/css' rel='stylesheet' />");
+
+	}else{}
+
 	//Sicherheitsprogramme laden
 
     require_once("ZeitErkennung.php");
@@ -37,6 +49,9 @@
 
 		$Ergebins = mysqli_query($verbindung, $DB_Inhalt);
 
+		
+		echo "<div id='ChatWindow'>";
+
 		//Anzeigen des Inhaltes der Datenbank Tabelle
 
 	    while($row_2 = mysqli_fetch_array($Ergebins)){
@@ -48,9 +63,11 @@
 
 	    	$GLOBALS['ausgabe'] = $ausgabe_3;
 
-	    	echo $row_2['Sender'] .":&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class='Nachricht'>" .$ausgabe ."</div><p style='font-size: 8pt;'>" .$row_2['DatumUhrzeit'] ."</p><br />";
+	    	echo "<div id='creator'>" .$row_2['Sender'] .":</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class='Nachricht' id='message'>" .$ausgabe ."</div><p style='font-size: 8pt;' id='DateTime'>" .$row_2['DatumUhrzeit'] ."</p><br />";
 
 	    }
+
+	    echo "</div>";
 
 ?>
 </body>

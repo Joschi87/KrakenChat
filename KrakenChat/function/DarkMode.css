@@ -1,0 +1,19 @@
+div#ChatWindow{
+	background-color: black;
+}
+
+div#creator{
+	color: green;
+}
+
+div#message{
+	color: green;
+}
+
+p#DateTime{
+	color: green;
+}
+
+html{
+	background-color: black;
+}

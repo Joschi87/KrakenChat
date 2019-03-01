@@ -1,3 +1,15 @@
+<?php 
+	//Loading DarkMode variabel
+
+        $DarkMode = $_GET["DarkMode"];
+
+	if ($DarkMode == "aktivate") {
+			
+			//Setzen der DarkMode Session zum starten des Darkmode
+			setcookie("DarkMode", $DarkMode, 0, "/");
+
+		}else{} 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,9 +86,9 @@
 			<?php
 
 				if($KindofChat == "P2P"){
-					echo "<iframe src='../function/loadUserChat.php?User=$User&ChatID=$Chat_ID'id='Activ_Chat'></iframe>";
+					echo "<iframe src='../function/loadUserChat.php?User=$User&ChatID=$Chat_ID' id='Activ_Chat'></iframe>";
 				}elseif ($KindofChat == "GroupChat") {
-					echo "<iframe src='../function/loadGroup.php?User=$User&GroupChatID=$GroupChat_ID'id='Activ_Chat'></iframe>";
+					echo "<iframe src='../function/loadGroup.php?User=$User&GroupChatID=$GroupChat_ID' id='Activ_Chat'></iframe>";
 				}else{
 					echo "Ein Fehler ist beim Laden des Chats aufgetreten!";
 				}
