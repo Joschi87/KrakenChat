@@ -99,13 +99,6 @@
 		}else{
 			header("refresh:5;url=../Chat/index.php?User=$User&GroupChatID=$GroupChat_ID&KindofChat=GroupChat");
 			echo "Ein Fehler ist beim versenden aufgetretten!<br />Diese Meldung schließt sich nach 5 Sekunden!";
-			echo $Chat_ID;
-			echo "<br />";
-			echo $Nachricht;
-			echo "<br />";
-			echo $User;
-			echo "<br />";
-			echo $LoaclTime;
 		}
 
 	}
