@@ -22,9 +22,6 @@
             </div>
             <br /><br />
             <center>
-                <!--<div class="registrieren">
-                    <a href="register/index.php"><p>Registrieren</p></a>
-                </div>-->
             </center>
         </div>
     </center>
