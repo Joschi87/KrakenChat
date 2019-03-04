@@ -6,7 +6,6 @@
 
 	//Sicherheitsprogramme laden
 
-	require_once("connection.php");
     require_once("ZeitErkennung.php");
     require_once("Control_Cookie.php");
 
@@ -26,7 +25,7 @@
 	}else{
 
 		$Control_Search_User = 0;
-		$Control_Search_User_DB = "SELECT Vorname, Nachname, Benutzername FROM Profil WHERE Nachname = '$Search_User'";
+		$Control_Search_User_DB = "SELECT Vorname, Nachname, benutzername FROM Profil WHERE Nachname = '$Search_User'";
         $ergebnis_Search_User = mysqli_query($verbindung, $Control_Search_User_DB);
             while ($row_Search_User = mysqli_fetch_assoc($ergebnis_Search_User)){$Control_Search_User++;}
 
