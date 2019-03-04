@@ -29,9 +29,6 @@
 
         setcookie("DarkMode","",time() - 3600, "/");
         
-        //Eintrag in die Log File Datei
-        
-        //$LogFIle = mysqli_query($verbindung, "INSERT INTO Logging(Benutzer, Freigabe, Zeit, Uhrzeit, Taetigkeit) VALUES('$Admin', '$Status', '$logouttime', '$logoutUhrzeit', 'Logout')");
         exit();
         
         

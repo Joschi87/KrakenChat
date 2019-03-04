@@ -52,48 +52,6 @@
             
             if($control_Benutzername != 0 or $control_Mail != 0){
                 
-                    $sql_Aktiv = "SELECT Aktiv FROM login WHERE benutzername = '$user'";
-                    $db_erg_Aktiv = mysqli_query( $verbindung, $sql_Aktiv );
-                    if ( ! $db_erg_Aktiv )
-                    {
-                        die('Ungültige Abfrage: ' . mysqli_error());
-                    }
-                    while ($zeile_Aktiv = mysqli_fetch_array( $db_erg_Aktiv, MYSQLI_ASSOC)){
-
-                    $Aktiv = $zeile_Aktiv["Aktiv"]; 
-                    }
-            
-                    if($Aktiv == "online"){
-
-                        //Wird Aktiv bei neuer Anmeldung während aktiver Sitzung. Sendet der hinterlegten Mail-Adresse eine Sicherheitshinweis.
-
-                        $sql_Mail = "SELECT Mail FROM login WHERE benutzername = '$user'";
-                        $db_erg_Mail = mysqli_query( $verbindung, $sql_Mail );
-                        if ( ! $db_erg_Mail )
-                        {
-                            die('Ungültige Abfrage: ' . mysqli_error());
-                        }
-                        while ($zeile_Mail = mysqli_fetch_array( $db_erg_Mail, MYSQLI_ASSOC)){
-
-                        $Mail = $zeile_Mail["Mail"]; 
-                        }
-
-                        require_once("../Inhalt_mail.php");
-                        
-
-                        //mail($Mail, $Betreff, $Nachricht, $from);
-                        
-                        //Speichert die IP-Adresse, wenn die Mail gesendet
-                        
-                        if (!isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-                            $client_ip = $_SERVER['REMOTE_ADDR'];}
-
-                        else {$client_ip = $_SERVER['HTTP_X_FORWARDED_FOR'];}
-                        
-                        $IP_Adresse = mysqli_query($verbindung, "INSERT INTO Log(IP, Aktion, Zeit) VALUES ('$client_ip', 'Anmeldung waehrend aktiver Sitzung bei $user', '$loginTime')");
-                        
-                    }
-                
                     //Sessionnummer wird aus der Datenbank an Hand des Benutzernames gesucht. Um bestehende Sitzungen weiterzuführen.
                 
                     $sql_Sessionnummer = "SELECT sessionnummer FROM login WHERE benutzername = '$user'";
