@@ -163,7 +163,6 @@
                     echo "<!DOCTYPE html>";
                     echo "<center>";
                     echo "Dieser Administrator '<b>$user</b>' exestiert bei uns im System nicht. Oder Sie haben das Falsche Passwort eingeben. <a href='../index.php'>Versuchen Sie es erneut</a>";
-                    echo "Falls Sie sich noch nicht bei uns registriert haben können Sie <a href='../register/index.php'>hier klicken</a> um sich zu registrieren.";
                     echo "</center>";
                     echo "</html>";
                 }
