@@ -16,6 +16,9 @@
    			Database User password: &nbsp;&nbsp; <input type="password" name="password" class="password" id="password_1" /><br />
    			Replay password: &nbsp;&nbsp;&nbsp;  <input type="password" name="password_again" class="password" id="password_2" /><br />
    			<p id="password_status"></p>
+   			Databasename:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="DB_Name" />
+   			<br /><br />
+   			<input type="submit" value="Datenbank einrichten" />
    		</form>
    </div>
    <script>
