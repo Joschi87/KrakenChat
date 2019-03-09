@@ -11,7 +11,7 @@
     </header>
    <div class="content">
    		<h3>First steps of the KrakenChat</h3>
-   		<form action="../function/first_steps.php" method="post" class="first_steps">
+   		<form action="../function/first_step/first_steps.php" method="post" class="first_steps">
    			Database Username: &nbsp;&nbsp;&nbsp;<input type="text" name="DB_User" /><br />
    			Database User password: &nbsp;&nbsp; <input type="password" name="password" class="password" id="password_1" /><br />
    			Replay password: &nbsp;&nbsp;&nbsp;  <input type="password" name="password_again" class="password" id="password_2" /><br />
