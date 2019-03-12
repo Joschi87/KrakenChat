@@ -35,7 +35,7 @@
 
 			//This function search the username and set a global variable with the value "Username is free" for a positiv result or "Username is in use" for a neagativ result
 
-			UserControl();
+			UserControll();
 
 			if ($result_DBUser == TRUE) {
 				
