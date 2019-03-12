@@ -9,7 +9,7 @@
 
 	//loading of the functions for the process
 
-	include("Controlling_DBUsername.php");
+	include_once("Controlling_DBUsername.php");
 
 
 	if ($database_Username == "" or $database_User_Password == "" or $database_User_Password_Again == "" or $database_Name == "") {
