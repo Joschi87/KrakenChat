@@ -18,3 +18,4 @@ class ChatCommands():
 		self.backstep = "cd -back:/";
 		self.forward = "cd -forward:/";
 		self.writeMessage = "echo -message:/";
+		self.openChat = "cat -chat";
