@@ -58,6 +58,3 @@ class ChatCommands:
 
 		for x in help_dictionary:
 			print(help_dictionary[x]);
-
-	def test():
-		print("das ist ein test")
