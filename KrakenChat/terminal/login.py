@@ -10,4 +10,3 @@ def checkinglogin():
 	resultofchecking = checking_login.fetchall()
 
 	print(resultofchecking)
-	break
