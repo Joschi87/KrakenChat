@@ -9,4 +9,6 @@ def checkinglogin():
 	checking_login.execute("SELECT username, password FROM login WHERE username = %s AND password = %s", username, password)
 	resultofchecking = checking_login.fetchall()
 
-	print(resultofchecking)
+	if resultofchecking == True:
+		global startloop
+		startloop = 1

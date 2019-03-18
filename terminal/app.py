@@ -3,10 +3,11 @@
 
 import getpass
 import mysql.connector
-import login
 from chatcommands import ChatCommands
+from login import checkinglogin
+from checkinginput import checkingthecommand
 
-#chatcommands = ChatCommands()
+chatcommands = ChatCommands()
 
 username = input("Username: ")
 password = getpass.getpass("Password: ")
@@ -24,4 +25,14 @@ else:
 	#open function checkinglogin
 
 	login.checkinglogin()
+
+	pointofexit = None
 	
+	while pointofexit != True:
+		
+		chatcommands.userinput = input()
+
+		checkinginput(chatcommands.userinput)
+
+
+		

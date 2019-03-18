@@ -28,16 +28,7 @@ class ChatCommands:
 		#variable for the users chat commands inputs
 		#the varaiable are almost the same like the ready-made chat commands only that is a user after the self  
 
-		self.userselectDB = "";
-		self.userselectNotifications = "";
-		self.userselectChat = "";
-		self.usershowUser = "";
-		self.userselectProfil = "";
-		self.userbackstep = "";
-		self.userforward = "";
-		self.userwirteMessage = "";
-		self.usercreateChat = "";
-		self.userdeleteChat = "";
+		self.userinput = ""
 
 	def needhelp(self):
 		
