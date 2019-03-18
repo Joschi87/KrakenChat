@@ -1,0 +1,383 @@
+/*Style für die Menübar*/
+div.top_bar{
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	border-top: 1px solid black;
+    border-bottom: 1px solid black;
+	background: white;
+	background-position: 0px 0px;
+	top: 0px;
+	z-index: 10;
+	display:block;
+    right: 0px;
+}
+
+div.menue{
+	position: absolute;
+	left: 50%;
+	margin-left: -400px;
+}
+
+div.m_button{
+	width: 155px;
+	height: 50px;
+	border-top: 1px solid black;
+	margin-top: -1px;
+	background: white;
+	float: left;
+}
+
+div.m_button:hover{
+	background: white;
+    border: 1px solid black;
+}
+
+div.login{
+	position: absolute;
+}
+
+div.register_ebene{
+    width: 60%;
+    margin-left: 10%;
+    margin-top: 2%;
+    border: 1px solid black;
+    
+}
+
+a.menue{
+    text-decoration: none;
+}
+
+a.menue:hover{
+    text-decoration: none;
+}
+
+p.menue{
+    color: black;
+    font-size: 13pt;
+}
+
+p.menue:hover{
+    color: white;
+}
+/*Ende Style für die Menübar*/
+
+div.activ_User{
+	float: left;
+	position: fixed;
+	margin-top: 7%;
+	height: 60%;
+}
+
+div#Profilbild_suche{
+	display: none;
+}
+
+div.Messenger_Control_Panel{
+	margin-top: 7%;
+	width: 60.5%;
+	margin-right: 10%;
+	border: 1px solid black;
+	z-index: 10;
+	display: block;
+	right: 0px;
+ 	float: right;
+ 	position: fixed;
+ 	background: white;
+}
+
+div.Messenger_Control_Panel_Button{
+	margin-left: 2%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+
+}
+
+div.Messenger_Control_Panel_Button_2{
+	margin-left: 15%;
+	margin-top: -50px;	
+}
+
+div.Messenger_Control_Panel_Button_3{
+	margin-left: 28%;
+	margin-top: -50px;	
+}
+
+div.Messenger_Control_Panel_Button_4{
+	margin-left: 41%;
+	margin-top: -50px;	
+}
+
+div.Messenger{
+	margin-top: 17%;
+	margin-right: 10%;
+	width: 60.5%;
+	border: 1px solid black;
+	background: white;
+	float: right;
+	z-index: 10;
+	display: block;
+	right: 0px;
+	position: fixed;
+
+}
+
+div.Messenger_Group{
+	margin-top: 35%;
+	margin-right: 10%;
+	width: 60.5%;
+	border: 1px solid black;
+	background: white;
+	float: right;
+	z-index: 10;
+	display: block;
+	right: 0px;
+	position: fixed;
+
+}
+
+div#Data_Eigene_Fotos{
+    display: none;
+}
+
+div.register_ebene{
+	margin-top: 10%;
+}
+
+div.Data_Profil{
+	margin-left: 5%;
+	font-family: Times black;
+}
+
+div#panel{
+	margin-left: 2%;
+	display: none;
+}
+
+div#flip{
+	margin-top: 2%;
+}
+
+div.All_Chats{
+	margin-left: 5%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+div.Messenger_For_Chat{
+	margin-top: 7%;
+	margin-right: 17.5%;
+	width: 60.5%;
+	height: 600px;
+	border: 1px solid black;
+	background: white;
+	float: right;
+
+}
+
+div.Nachricht{
+	margin-left: 200px;
+}
+
+div.notification{
+	margin-top: 55px;
+	width: 15%;
+	display: none;
+}
+
+div.search{
+	float: right;
+	margin-right: 10%;
+	margin-top: 13px;
+}
+div.Profil{
+	width: 60.5%;
+	margin-top: 7%;
+	margin-left: 20%;
+}
+div.AllgemineInfos{
+	float: right;
+	border: 1px solid black;
+	width: 40%;
+	margin-right: 7%;
+}
+
+div#activ_User{
+	border-top: 1px solid black;
+	height: 20px;
+	margin-left: 2%;
+}
+
+div.Chat_Info{
+	float: left;
+	position: fixed;
+	margin-top: 7%;
+	height: 20%;
+}
+
+div.Activ_Chat{
+	height: 70%;
+}
+
+div.New_Group{
+	margin-top: 10%;
+	margin-right: 17.5%;
+	float: right;
+	width: 60.5%;
+	border: 1px solid black;
+}
+
+div.profil_work{
+	margin-top: 7%;
+	margin-left: 30%;
+	border: 1px solid black;
+	position: fixed;
+	width: 50%;
+}
+
+div.Profilbild{
+	float: left;
+	margin: 2%;
+}
+
+div.Information{
+	float: right;
+	margin-right: 2%;	
+}
+
+div.content{
+	position: middle;
+	width: 300px;
+	height: 150px;
+	border: 1px solid black;
+	margin-top: 10%;
+}
+
+form.login{
+	margin: 10px;
+}
+
+p.Control_Panel{
+	font-family: Times black;
+	font-size: 10pt;
+}
+
+p.Profil_Infos_headline{
+	font-size: 14pt;
+	font-family: Times black;
+	margin-left: 10px;
+}
+
+p.Profil_Information{
+	margin-left: 2%;
+}
+
+button.m_Messenger_Control_Panel{
+	width: 100px;
+	height: 50px;
+}
+
+button.m_Messenger_Control_Panel:hover{
+	background: lightgray;
+	font-style: bold;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+button.m_activ_User_Button{
+	width: 100px; height: 50px;
+	margin-left: 4%;
+	margin-right: 4%;
+}
+
+button#Chat_delete{
+	float: right;
+	margin-right: 32%;
+	width: 100px;
+}
+
+iframe#Chats{
+	width: 95%;
+	margin: 2%;
+}
+iframe#Activ_Chat{
+	width: 95%;
+	margin: 2%;
+	height: 100%;
+}
+
+iframe#activ_User{
+	border-top: 1px solid black;
+	height: 20px;
+	margin-left: 2%;
+	width: 110%;
+}
+
+input#NeueNachricht{
+	width: 95%;
+	margin: 2%;
+}
+
+input#NeueNachricht_Submit_Button{
+	margin: 2%;
+}
+
+input#Groupname{
+	width: 300px;
+}
+
+input#Groupdescription{
+	width: 300px;
+}
+
+input.New_Group{
+	float: right;
+	margin-right: 30%;
+}
+
+input.Profil_Information{
+	width: 300px;
+}
+
+select#User{
+	width: 300px;
+	float: right;
+	margin-right: 30%;
+}
+
+a#button_activ_User{
+	float: right;
+	margin-right: 2%;
+}
+
+span#activ_User{
+	float: right;
+}
+
+span#User{
+	float: left;
+	margin-left: 2%;
+}
+
+span#Chat_open{
+	height: 20px;
+}
+
+button#Chat_Button_open{
+	float: right;
+	margin-right: 20%;
+}
+
+button#Chat_Button_delete{
+	float: right;
+	margin-right: -150px;
+}
+
+form#New_Group{
+	margin: 2%;
+}
+
+form#Change_Profil_Information{
+	margin: 2%;
+}
