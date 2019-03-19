@@ -12,14 +12,14 @@ chatcommands.passwd = getpass.getpass("Password: ")
 
 #checking the both input 
 
-if username == "" or password == "":
+if chatcommands.username == "" or chatcommands.passwd == "":
 	print("You do not write a username or a password")
 	exit()
 
 else:
 	#open function checkinglogin
 
-	startloop, nameofuser = login.checkinglogin(username, password)
+	startloop, nameofuser = checkinglogin(chatcommands.username, chatcommands.passwd)
 
 	pointofexit = False
 

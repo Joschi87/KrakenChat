@@ -15,7 +15,7 @@ def checkinglogin(username, password):
 	resultofchecking = checking_login.fetchall()
 
 	if resultofchecking == True:
-		
+
 		startloop = 1
 		nameofuser = username
 
@@ -24,4 +24,3 @@ def checkinglogin(username, password):
 	else:
 		mydb.connector.close()
 		print("User was not found!")
-		break
