@@ -12,8 +12,6 @@ chatcommands = ChatCommands()
 username = input("Username: ")
 password = getpass.getpass("Password: ")
 
-mydb = mysql.connector.connect(host="localhost", user="admin", passwd="passwort", database="")
-
 #checking the both input 
 
 if username == "" or password == "":
@@ -40,7 +38,6 @@ else:
 
 
 	else:
-		mydb.close()
 		print("Wrong Username or password")
 
 
