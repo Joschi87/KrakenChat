@@ -3,7 +3,7 @@
 
 import mysql.connector
 
-def checkinglogin():
+def checkinglogin(username, password):
 
 	mydb = mysql.connector.connect(host="localhost", user="admin", passwd="passwort", database="")
 
@@ -15,12 +15,13 @@ def checkinglogin():
 	resultofchecking = checking_login.fetchall()
 
 	if resultofchecking == True:
-		global startloop
+		
 		startloop = 1
-		global nameofuser
 		nameofuser = username
 
+		return (startloop, nameofuser)
+
 	else:
-		mydb.close()
+		mydb.connector.close()
 		print("User was not found!")
 		break
