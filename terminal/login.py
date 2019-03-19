@@ -12,3 +12,5 @@ def checkinglogin():
 	if resultofchecking == True:
 		global startloop
 		startloop = 1
+		global nameofuser
+		nameofuser = username
