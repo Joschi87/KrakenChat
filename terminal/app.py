@@ -2,39 +2,36 @@
 #/usr/bin/python3
 
 import getpass
-import mysql.connector
 from chatcommands import ChatCommands
 from login import checkinglogin
-from checkinginput import checkingthecommand
 
 chatcommands = ChatCommands()
 
-username = input("Username: ")
-password = getpass.getpass("Password: ")
+chatcommands.username = input("Username: ")
+chatcommands.passwd = getpass.getpass("Password: ")
 
 #checking the both input 
 
 if username == "" or password == "":
 	print("You do not write a username or a password")
-	break
 	exit()
 
 else:
 	#open function checkinglogin
 
-	login.checkinglogin()
+	startloop, nameofuser = login.checkinglogin(username, password)
 
-	pointofexit = None
+	pointofexit = False
 
 	if startloop == 1:
 
 		#Start the while loop if the login successfully
 
-		while pointofexit != True:
+		while pointofexit is False:
 		
-			chatcommands.userinput = input()
+			userinput = input()
 
-			checkinginput(chatcommands.userinput)
+			pointofexit = chatcommands.checkingthecommand(userinput)
 
 
 	else:
