@@ -27,12 +27,21 @@ else:
 	login.checkinglogin()
 
 	pointofexit = None
-	
-	while pointofexit != True:
-		
-		chatcommands.userinput = input()
 
-		checkinginput(chatcommands.userinput)
+	if startloop == 1:
+
+		#Start the while loop if the login successfully
+
+		while pointofexit != True:
+		
+			chatcommands.userinput = input()
+
+			checkinginput(chatcommands.userinput)
+
+
+	else:
+		mydb.close()
+		print("Wrong Username or password")
 
 
 		
