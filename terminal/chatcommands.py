@@ -83,10 +83,10 @@ class ChatCommands:
 
 			
 		elif userinput == self.showUser:
-
+			pass
 
 		elif userinput == self.selectProfil:
-
+			pass
 
 		elif userinput.startswith(self.writeMessage):
 
@@ -94,10 +94,10 @@ class ChatCommands:
 
 
 		elif userinput == self.createChat:
-
+			pass
 
 		elif userinput == self.deleteChat:
-
+			pass
 
 		elif userinput == self.logout:
 
