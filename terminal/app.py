@@ -2,6 +2,7 @@
 #/usr/bin/python3
 
 import getpass
+import datetime
 from chatcommands import ChatCommands
 from login import checkinglogin
 
@@ -28,10 +29,12 @@ else:
 		#Start the while loop if the login successfully
 
 		while pointofexit is False:
+
+			datetime = datetime.datetime.now()
 		
 			userinput = input()
 
-			pointofexit = chatcommands.checkingthecommand(userinput)
+			pointofexit = chatcommands.checkingthecommand(userinput, datetime)
 
 
 	else:

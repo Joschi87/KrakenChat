@@ -42,7 +42,7 @@ class ChatCommands:
 		for x in help_dictionary:
 			print(help_dictionary[x]);
 
-	def checkingthecommand(self, userinput):
+	def checkingthecommand(self, userinput, datetime):
 
 		mydb = mysql.connector.connect(host="localhost", user="admin", passwd="passwort", database="")	
 
@@ -61,6 +61,12 @@ class ChatCommands:
 			for allchats in showallchats:
 				print(allchats)
 
+			#close the chatdb.cursor and close the mysql connection
+
+			chatdb.close()
+			mydb.close()
+
+
 		elif userinput == self.selectNotifications:
 
 			#Select all notifications for your profi
@@ -73,6 +79,11 @@ class ChatCommands:
 
 			for allnotes in showallnotes:
 				print(allnotes)
+
+			#close the mynotifications.cursor and close the mysql connection
+
+			mynotifications.close()
+			mydb.close()
 
 
 		elif userinput.startswith(self.selectChat):
@@ -90,6 +101,11 @@ class ChatCommands:
 			for singlechat in showsinglechat:
 				print(singlechat)
 
+			#close the mychat.cursor and close the mysql connection
+
+			mychat.close()
+			mydb.close()
+
 			
 		elif userinput.startswith(self.showUser):
 
@@ -106,6 +122,11 @@ class ChatCommands:
 			for chatmembers in showingusers:
 				print(chatmembers)
 
+			#close the allusers.cursor and close the mysql connection
+			
+			allusers.close()
+			mydb.close()
+
 		elif userinput.startswith(self.selectProfil):
 			
 			#loading the single profil which the users put in the userinput
@@ -114,10 +135,40 @@ class ChatCommands:
 
 			showProfil = mydb.cursor()
 			showProfil.execute("SELECT * FROM Profil WHERE benutzername = %s", openprofil)
+			loadProfil = showProfil.fetchall()
+
+			#for loop for print the result of the mysql select command
+
+			for printProfil in loadProfil:
+				print(printProfil)
+
+			#close the showProfil.cursor and close the mysql connection
+
+			showProfil.close()
+			mydb.close()
 
 		elif userinput.startswith(self.writeMessage):
 
-			chatID, message = arg_splitter(userinput, self.writeMessage, 2)
+			try:
+			
+				#split the userinput in chatID and the message 
+
+				chatID, message = arg_splitter(userinput, self.writeMessage, 2)
+
+				#SQL insert into function
+
+				writeNewMessage = mydb.cursor()
+				writeNewMessage.execute("INSERT INTO %s (Nachricht, Sender, DatumUhrzeit) VALUES (%s, %s, %s)", chatID, message, self.username, datetime)
+
+				writeNewMessage.commit()
+
+			except mysql.connector.Error as error :
+				print("Failed to insert the meassage: {}".format(error))
+
+			finally:
+				if mydb.is_connect():
+					writeNewMessage.close()
+					mydb.close()
 
 
 		elif userinput == self.createChat:
