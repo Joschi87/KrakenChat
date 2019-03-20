@@ -1,2 +1,2 @@
 #ignore pycache
-/terminal/__pycache__
+*.pyc
