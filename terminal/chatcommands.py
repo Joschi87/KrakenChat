@@ -56,6 +56,8 @@ class ChatCommands:
 			chatdb.execute("SELECT ChatID, Ersteller, Empfaenger FROM ChatConnection WHERE Ersteller = %s OR Empfaenger = %s", self.username, self.username)
 			showallchats = chatdb.fetchall()
 
+			#for loop for print the result of the mysql select command
+
 			for allchats in showallchats:
 				print(allchats)
 
@@ -64,8 +66,10 @@ class ChatCommands:
 			#Select all notifications for your profi
 
 			mynotifications = mydb.cursor()
-			mynotifications.execute("SELECT ChatID, Ersteller, Empfaenger, Notification FROM ChatConnection WHERE Notification = 'Neue Mitteilung' AND Ersteller = %s OR Empfaenger = %s ORDER BY Notification DESC", self.username, self.username)
+			mynotifications.execute("SELECT ChatID, Ersteller, Empfaenger, Notification FROM ChatConnection WHERE Notification = 'Neue Mitteilung' AND Ersteller = %s OR Empfaenger = %s", self.username, self.username)
 			showallnotes = mynotifications.fetchall()
+
+			#for loop for print the result of the mysql select command
 
 			for allnotes in showallnotes:
 				print(allnotes)
@@ -73,20 +77,43 @@ class ChatCommands:
 
 		elif userinput.startswith(self.selectChat):
 
+			#loading of a single chat
+
 			chatID = arg_splitter(userinput, self.selectChat, 1)
+
 			mychat = mydb.cursor()
-			mychat.execute("SELECT DatumUhrzeit, Sender, Nachricht FROM %s ORDER BY DESC", chatID)
+			mychat.execute("SELECT DatumUhrzeit, Sender, Nachricht FROM %s", chatID)
 			showsinglechat = mychat.fetchall()
+
+			#for loop for print the result of the mysql select command
 
 			for singlechat in showsinglechat:
 				print(singlechat)
 
 			
-		elif userinput == self.showUser:
-			pass
+		elif userinput.startswith(self.showUser):
 
-		elif userinput == self.selectProfil:
-			pass
+			#loading the list pf member in the chat programm and order that the member ther are online 
+
+			searchinguser = arg_splitter(userinput, self.showUser, 1)
+
+			allusers = mydb.cursor()
+			allusers.execute("SELECT Vorname, Nachname, benutzername, Aktiv FROM login")
+			showingusers = allusers.fetchall()
+
+			#for loop for print the result of the mysql select command
+
+			for chatmembers in showingusers:
+				print(chatmembers)
+
+		elif userinput.startswith(self.selectProfil):
+			
+			#loading the single profil which the users put in the userinput
+
+			openprofil = arg_splitter(userinput, self.selectProfil, 1)
+
+			showProfil = mydb.cursor()
+			showProfil.execute("SELECT * FROM Profil WHERE benutzername = %s", openprofil)
 
 		elif userinput.startswith(self.writeMessage):
 
