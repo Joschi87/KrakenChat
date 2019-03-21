@@ -1,6 +1,8 @@
 #!/Library/Frameworks/Python.framework/Versions/3.7/bin/python3
 #/usr/bin/python3
 
+#this import is for the command create chats
+from random import randint
 
 class ChatCommands:
 
@@ -206,16 +208,61 @@ class ChatCommands:
 				print("Failed to insert the meassage: {}".format(error))
 
 			finally:
+
 				if mydb.is_connect():
+
+					#clsoe the writeNewMessage.cursor and close the mysql connection
+
 					writeNewMessage.close()
 					mydb.close()
 
 
-		elif userinput == self.createChat:
-			pass
+		elif userinput.startswith(self.createChat):
+			
+			try:
+				
+				#split the userinput in receiver name
 
-		elif userinput == self.deleteChat:
-			pass
+				chatname, empfaenger = arg_splitter(userinput, self.createChat, 2)
+
+				#create a random number for the chat id
+
+				newChatIdNumber = randint(10000000, 99999999)
+
+				#sql code for createing the new table and write into the chatconnection
+
+				creatingchat = mydb.cursor()
+				creatingchat.execute("CREATE TABLE "datenbank" + "newChatIdNumber" ( ID INT NOT NULL AUTO_INCREMENT ,  Nachricht TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,  Sender TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL , DatumUhrzeit DATETIME NOT NULL ,  PRIMARY KEY  (ID)) ENGINE = InnoDB")
+				creatingchat.execute("INSERT INTO ChatConnection (ChatID, Ersteller, Empfaenger) VALUES (%s, %s,%s)", newChatIdNumber, self.username, empfaenger)
+
+				creatingchat.commit()
+
+			except mysql.connector.Error as error:
+				print("Something went wrong: {}".format(error))
+
+			finally:
+
+				if mydb.is_connect():
+
+					#close the createchat.cursor and close the mysql connection
+
+					createchat.close()
+					mydb.close()
+
+
+		elif userinput.startswith(self.deleteChat):
+			
+			try:
+				
+				#split the userinput in chat id which want to  delete
+
+				deletechatid = arg_splitter(userinput, self.deleteChat, 1)
+
+				#sql code for deleting the chat
+
+				deletingchat = mydb.cursor()
+				deletingchat.execute("DROP TABLE IF EXISTS %s", deletechatid)
+
 
 		elif userinput == self.logout:
 
