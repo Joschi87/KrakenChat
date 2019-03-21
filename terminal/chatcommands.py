@@ -44,67 +44,107 @@ class ChatCommands:
 
 	def checkingthecommand(self, userinput, datetime):
 
-		mydb = mysql.connector.connect(host="localhost", user="admin", passwd="passwort", database="")	
+		try:
+
+			#try to connection to the mysql server with database
+
+			mydb = mysql.connector.connect(host="localhost", user="admin", passwd="passwort", database="")
+
+		except:
+
+			print("Connection failed to the MYSQL server")
+
+		finally:
+
+			pass
 
 		#Start checking the userinput
 
 		if self.userinput == self.selectDB:
 
-			#Select all chat ids from the database
+			try:
 
-			chatdb = mydb.cursor()
-			chatdb.execute("SELECT ChatID, Ersteller, Empfaenger FROM ChatConnection WHERE Ersteller = %s OR Empfaenger = %s", self.username, self.username)
-			showallchats = chatdb.fetchall()
+				#Select all chat ids from the database
 
-			#for loop for print the result of the mysql select command
+				chatdb = mydb.cursor()
+				chatdb.execute("SELECT ChatID, Ersteller, Empfaenger FROM ChatConnection WHERE Ersteller = %s OR Empfaenger = %s", self.username, self.username)
+				showallchats = chatdb.fetchall()
 
-			for allchats in showallchats:
-				print(allchats)
+				#for loop for print the result of the mysql select command
 
-			#close the chatdb.cursor and close the mysql connection
+				for allchats in showallchats:
+					print(allchats)
 
-			chatdb.close()
-			mydb.close()
+			except:
+
+				print("something went wrong!")
+
+			finally:
+
+				if mydb.is_connect():
+
+					#close the chatdb.cursor and close the mysql connection
+
+					chatdb.close()
+					mydb.close()
 
 
 		elif userinput == self.selectNotifications:
 
-			#Select all notifications for your profi
+			try:
 
-			mynotifications = mydb.cursor()
-			mynotifications.execute("SELECT ChatID, Ersteller, Empfaenger, Notification FROM ChatConnection WHERE Notification = 'Neue Mitteilung' AND Ersteller = %s OR Empfaenger = %s", self.username, self.username)
-			showallnotes = mynotifications.fetchall()
+				#Select all notifications for your profi
 
-			#for loop for print the result of the mysql select command
+				mynotifications = mydb.cursor()
+				mynotifications.execute("SELECT ChatID, Ersteller, Empfaenger, Notification FROM ChatConnection WHERE Notification = 'Neue Mitteilung' AND Ersteller = %s OR Empfaenger = %s", self.username, self.username)
+				showallnotes = mynotifications.fetchall()
 
-			for allnotes in showallnotes:
-				print(allnotes)
+				#for loop for print the result of the mysql select command
 
-			#close the mynotifications.cursor and close the mysql connection
+				for allnotes in showallnotes:
+					print(allnotes)
 
-			mynotifications.close()
-			mydb.close()
+			except:
+				print("something went wrong!")
+
+			finally:
+
+				if mydb.is_connect():
+				
+					#close the mynotifications.cursor and close the mysql connection
+
+					mynotifications.close()
+					mydb.close()
 
 
 		elif userinput.startswith(self.selectChat):
 
-			#loading of a single chat
+			try:
 
-			chatID = arg_splitter(userinput, self.selectChat, 1)
+				#loading of a single chat
 
-			mychat = mydb.cursor()
-			mychat.execute("SELECT DatumUhrzeit, Sender, Nachricht FROM %s", chatID)
-			showsinglechat = mychat.fetchall()
+				chatID = arg_splitter(userinput, self.selectChat, 1)
 
-			#for loop for print the result of the mysql select command
+				mychat = mydb.cursor()
+				mychat.execute("SELECT DatumUhrzeit, Sender, Nachricht FROM %s", chatID)
+				showsinglechat = mychat.fetchall()
 
-			for singlechat in showsinglechat:
+				#for loop for print the result of the mysql select command
+
+				for singlechat in showsinglechat:
 				print(singlechat)
 
-			#close the mychat.cursor and close the mysql connection
+			except:
+				print("something went wrong!")
 
-			mychat.close()
-			mydb.close()
+			finally:
+
+				if mydb.is_connect():
+					
+					#close the mychat.cursor and close the mysql connection
+
+					mychat.close()
+					mydb.close()
 
 			
 		elif userinput.startswith(self.showUser):
