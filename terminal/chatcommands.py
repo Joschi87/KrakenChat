@@ -24,6 +24,7 @@ class ChatCommands:
 		self.createChat = "echo -chat:/"; #create a new chat
 		self.deleteChat = "remove -chat:/"; #delete a chat
 		self.logout = "exit -logout:/"; #logout from the chat
+		self.help = "--help:/"; #help
 
 	def needhelp(self):
 		
@@ -42,7 +43,7 @@ class ChatCommands:
 		}
 
 		for x in help_dictionary:
-			print(help_dictionary[x]);
+			print(help_dictionary[x])
 
 	def checkingthecommand(self, userinput, datetime):
 
@@ -263,6 +264,21 @@ class ChatCommands:
 				deletingchat = mydb.cursor()
 				deletingchat.execute("DROP TABLE IF EXISTS %s", deletechatid)
 
+			except mysql.connector.Error as error:
+				print("something went wrong: {}".format(error))
+
+			finally:
+
+				if mydb.is_connect():
+
+					#close the createchat.cursor and close the mysql connection
+
+					deletingchat.close()
+					mydb.close()
+
+		elif userinput == self.help:
+
+			needhelp()
 
 		elif userinput == self.logout:
 
