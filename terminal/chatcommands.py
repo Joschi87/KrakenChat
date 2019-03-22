@@ -271,7 +271,7 @@ class ChatCommands:
 
 				if mydb.is_connect():
 
-					#close the createchat.cursor and close the mysql connection
+					#close the deletingchat.cursor and close the mysql connection
 
 					deletingchat.close()
 					mydb.close()
