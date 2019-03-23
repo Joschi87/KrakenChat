@@ -39,7 +39,8 @@ class ChatCommands:
 			"view_write_message" : self.writeMessage + " write a new message into the chat",
 			"view_create_chat" : self.createChat + " create a new chat with a user",
 			"view_delete_chat" : self.deleteChat + " delete a chat",
-			"view_logout" : self.logout + " logout from chat"
+			"view_logout" : self.logout + " logout from chat",
+			"view_help" : self.help + " when you need help"
 		}
 
 		for x in help_dictionary:
