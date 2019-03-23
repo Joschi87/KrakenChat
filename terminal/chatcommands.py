@@ -136,7 +136,7 @@ class ChatCommands:
 				#for loop for print the result of the mysql select command
 
 				for singlechat in showsinglechat:
-				print(singlechat)
+					print(singlechat)
 
 			except:
 				print("something went wrong!")
