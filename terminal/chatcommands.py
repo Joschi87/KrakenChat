@@ -234,7 +234,7 @@ class ChatCommands:
 				#sql code for createing the new table and write into the chatconnection
 
 				creatingchat = mydb.cursor()
-				creatingchat.execute("CREATE TABLE "datenbank" + "newChatIdNumber" ( ID INT NOT NULL AUTO_INCREMENT ,  Nachricht TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,  Sender TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL , DatumUhrzeit DATETIME NOT NULL ,  PRIMARY KEY  (ID)) ENGINE = InnoDB")
+				creatingchat.execute("CREATE TABLE 'datenbank' + 'newChatIdNumber' ( ID INT NOT NULL AUTO_INCREMENT ,  Nachricht TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,  Sender TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL , DatumUhrzeit DATETIME NOT NULL ,  PRIMARY KEY  (ID)) ENGINE = InnoDB")
 				creatingchat.execute("INSERT INTO ChatConnection (ChatID, Ersteller, Empfaenger) VALUES (%s, %s,%s)", newChatIdNumber, self.username, empfaenger)
 
 				creatingchat.commit()
