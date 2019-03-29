@@ -5,22 +5,30 @@ import mysql.connector
 
 def checkinglogin(username, password):
 
-	mydb = mysql.connector.connect(host="localhost", user="admin", passwd="passwort", database="")
+	startloop = 0
+	nameofuser = None
+
+	print(username)
+	print(password)
+
+	mydb = mysql.connector.connect(host="127.0.0.1", user="root", passwd="", database="TerminalTestDB")
 
 
 	#checking the variable in the db 
 	
 	checking_login = mydb.cursor()
-	checking_login.execute("SELECT username, password FROM login WHERE username = %s AND password = %s", username, password)
+	checking_login.execute("SELECT Username, Passwd FROM login WHERE Username = %s AND Passwd = %s", (username, password))
 	resultofchecking = checking_login.fetchall()
 
-	if resultofchecking == True:
+	print(resultofchecking)
+
+	if resultofchecking:
 
 		startloop = 1
+		
 		nameofuser = username
 
-		return (startloop, nameofuser)
-
 	else:
-		mydb.connector.close()
-		print("User was not found!")
+		mydb.close()
+
+	return (startloop, nameofuser)

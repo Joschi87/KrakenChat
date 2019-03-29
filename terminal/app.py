@@ -14,6 +14,7 @@ chatcommands.passwd = getpass.getpass("Password: ")
 #checking the both input 
 
 if chatcommands.username == "" or chatcommands.passwd == "":
+	
 	print("You do not write a username or a password")
 	exit()
 

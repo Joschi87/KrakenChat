@@ -3,6 +3,7 @@
 
 #this import is for the command create chats
 from random import randint
+import mysql.connector
 
 class ChatCommands:
 
@@ -52,7 +53,7 @@ class ChatCommands:
 
 			#try to connection to the mysql server with database
 
-			mydb = mysql.connector.connect(host="localhost", user="admin", passwd="passwort", database="")
+			mydb = mysql.connector.connect(host="127.0.0.1", user="root", passwd="", database="TerminalTestDB")
 
 		except:
 
@@ -234,7 +235,7 @@ class ChatCommands:
 				#sql code for createing the new table and write into the chatconnection
 
 				creatingchat = mydb.cursor()
-				creatingchat.execute("CREATE TABLE 'datenbank' + 'newChatIdNumber' ( ID INT NOT NULL AUTO_INCREMENT ,  Nachricht TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,  Sender TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL , DatumUhrzeit DATETIME NOT NULL ,  PRIMARY KEY  (ID)) ENGINE = InnoDB")
+				creatingchat.execute("CREATE TABLE 'newChatIdNumber' ( ID INT NOT NULL AUTO_INCREMENT ,  Nachricht TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ,  Sender TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL , DatumUhrzeit DATETIME NOT NULL ,  PRIMARY KEY  (ID)) ENGINE = InnoDB")
 				creatingchat.execute("INSERT INTO ChatConnection (ChatID, Ersteller, Empfaenger) VALUES (%s, %s,%s)", newChatIdNumber, self.username, empfaenger)
 
 				creatingchat.commit()
