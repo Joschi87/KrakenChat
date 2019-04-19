@@ -53,7 +53,7 @@ class ChatCommands:
 
 			#try to connection to the mysql server with database
 
-			mydb = mysql.connector.connect(host="127.0.0.1", user="root", passwd="", database="TerminalTestDB")
+			mydb = mysql.connector.connect(host="127.0.0.1", user="root", passwd="Janosch1998", database="TerminalTestDB")
 
 		except:
 
@@ -65,7 +65,7 @@ class ChatCommands:
 
 		#Start checking the userinput
 
-		if self.userinput == self.selectDB:
+		if userinput == self.selectDB:
 
 			try:
 

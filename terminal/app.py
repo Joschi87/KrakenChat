@@ -32,6 +32,8 @@ else:
 		while pointofexit is False:
 
 			datetime = datetime.datetime.now()
+
+			print("Please write a command:")
 		
 			userinput = input()
 
