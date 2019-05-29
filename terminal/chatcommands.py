@@ -16,36 +16,16 @@ class ChatCommands:
 
 		#ready-made chat commands member variable
 
-		self.selectDB = "ls -all:/"; #view of all chats 
+		self.selectDB = "ls -all:/" #view of all chats 
 		self.selectNotifications = "ls -note:/" #view all open notifications
-		self.selectChat = "ls -chat:/"; # view single chat
-		self.showUser = "ls -users:/"; #view all users with the status of ther(online or offline)
-		self.selectProfil = "ls -profil:/"; #view profils of other user
-		self.writeMessage = "echo -message:/"; #write a new message
-		self.createChat = "echo -chat:/"; #create a new chat
-		self.deleteChat = "remove -chat:/"; #delete a chat
-		self.logout = "exit -logout:/"; #logout from the chat
-		self.help = "--help:/"; #help
-
-	def needhelp(self):
-		
-		#create the function help with a dictionary of all chat commands and present as a for loop
-
-		help_dictionary = {
-			"view_all_chats" : self.selectDB + " View of all your Chats",
-			"view_all_open_notifications" : self.selectNotifications + " View all open notifications in your profil",
-			"view_single_chat" : self.selectChat + " View a single chat",
-			"view_show_user" : self.showUser + " View the status of the users (Online or Offline)",
-			"view_profil" : self.selectProfil + " View the profil of a other user",
-			"view_write_message" : self.writeMessage + " write a new message into the chat",
-			"view_create_chat" : self.createChat + " create a new chat with a user",
-			"view_delete_chat" : self.deleteChat + " delete a chat",
-			"view_logout" : self.logout + " logout from chat",
-			"view_help" : self.help + " when you need help"
-		}
-
-		for x in help_dictionary:
-			print(help_dictionary[x])
+		self.selectChat = "ls -chat:/" # view single chat
+		self.showUser = "ls -users:/" #view all users with the status of ther(online or offline)
+		self.selectProfil = "ls -profil:/" #view profils of other user
+		self.writeMessage = "echo -message:/" #write a new message
+		self.createChat = "echo -chat:/" #create a new chat
+		self.deleteChat = "remove -chat:/" #delete a chat
+		self.logout = "exit -logout:/" #logout from the chat
+		self.help = "--help:/" #help
 
 	def checkingthecommand(self, userinput, datetime):
 
@@ -280,7 +260,23 @@ class ChatCommands:
 
 		elif userinput == self.help:
 
-			needhelp()
+			#create the function help with a dictionary of all chat commands and present as a for loop
+
+			help_dictionary = {
+				"view_all_chats" : self.selectDB + " View of all your Chats",
+				"view_all_open_notifications" : self.selectNotifications + " View all open notifications in your profil",
+				"view_single_chat" : self.selectChat + " View a single chat",
+				"view_show_user" : self.showUser + " View the status of the users (Online or Offline)",
+				"view_profil" : self.selectProfil + " View the profil of a other user",
+				"view_write_message" : self.writeMessage + " write a new message into the chat",
+				"view_create_chat" : self.createChat + " create a new chat with a user",
+				"view_delete_chat" : self.deleteChat + " delete a chat",
+				"view_logout" : self.logout + " logout from chat",
+				"view_help" : self.help + " when you need help"
+			}
+
+			for x in help_dictionary:
+				print(help_dictionary[x])
 
 		elif userinput == self.logout:
 

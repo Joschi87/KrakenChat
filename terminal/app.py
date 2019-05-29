@@ -31,13 +31,15 @@ else:
 
 		while pointofexit is False:
 
-			datetime = datetime.datetime.now()
+			currenttime = datetime.datetime.now()
 
 			print("Please write a command:")
 		
 			userinput = input()
 
 			pointofexit = chatcommands.checkingthecommand(userinput, datetime)
+
+			print(pointofexit)
 
 
 	else:
