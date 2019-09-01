@@ -23,7 +23,7 @@
         }else{
 
             if (!preg_match("#^[a-zA-Z0-9]+$#", $user) or (!preg_match("#^[a-zA-Z0-9]+$#", $passwort))) {
-                print("Sie haben nicht erlaubte Zeichen genutzt");
+                print("<script text='text/javascript'>alert('Sie haben falsche Zeichen genutzt! Erlaubt sind nur a-z, A-Z und 0-9')</script>");
                 exit();
             }else{
             
