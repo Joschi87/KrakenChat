@@ -14,7 +14,7 @@
     <center>
         <div class="content">
             <div class="login">
-                <form action="function/login.php" method="post" class="login">
+                <form action="<?php require_once('function/login.php');?>" method="post" class="login">
                     User:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="user" value=""/><br /><br />
                     Passwort:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password" value="" /><br /><br />
                     <input type="submit" value="Anmelden" />
