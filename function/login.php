@@ -118,11 +118,7 @@
                     
                     
             }else{
-                    echo "<!DOCTYPE html>";
-                    echo "<center>";
-                    echo "Dieser Administrator '<b>$user</b>' exestiert bei uns im System nicht. Oder Sie haben das Falsche Passwort eingeben. <a href='../index.php'>Versuchen Sie es erneut</a>";
-                    echo "</center>";
-                    echo "</html>";
+                    echo "<!DOCTYPE html><center><script type='text/javascript'>alert('Dieser Nutzer <b><?php echo '$user';?></b> exestiert nicht im System.')</script></center></html>";
                 }
             }
         }
