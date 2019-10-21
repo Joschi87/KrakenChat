@@ -2,6 +2,7 @@
 	$User = $_GET["User"];
 	$Chat_ID = $_GET["ChatID"];
 	header("refresh:5;url=loadUserChat.php?User=$User&ChatID=$Chat_ID");
+	error_reporting (0);
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,10 +46,7 @@
 
 		//Download der Datenbank Tabelle des Chates
 
-		$DB_Inhalt = "SELECT * FROM `$Chat_ID` ORDER BY ID DESC";
-
-		$Ergebins = mysqli_query($verbindung, $DB_Inhalt);
-
+		$Ergebins = mysqli_query($verbindung, "SELECT * FROM `$Chat_ID` ORDER BY ID DESC");
 		
 		echo "<div id='ChatWindow'>";
 

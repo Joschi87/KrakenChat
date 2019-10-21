@@ -95,7 +95,7 @@
 
 			//Weiterleitung zurueck zur Chat Index
 
-			header("refresh:0.1;url=../Chat/index.php?User=$User&ChatID=$Chat_ID&KindofChat=$KindOfChat");
+			header("refresh:0.1;url=../Chat/index.php?User=$User&ChatID=$Chat_ID&KindofChat=$KindOfChat&Notice=");
 
 		}else{
 			header("refresh:5;url=../Chat/index.php?User=$User&ChatID=$Chat_ID&KindofChat=$KindOfChat");

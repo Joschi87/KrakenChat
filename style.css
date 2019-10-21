@@ -35,6 +35,8 @@ div.m_button:hover{
 
 div.login{
 	position: absolute;
+	margin-top: 10%;
+	
 }
 
 div.register_ebene{
@@ -109,8 +111,8 @@ div.Messenger_Control_Panel_Button_4{
 	margin-top: -50px;	
 }
 
-div.Messenger{
-	margin-top: 17%;
+#Messenger{
+	margin-top: 15%;
 	margin-right: 10%;
 	width: 60.5%;
 	border: 1px solid black;
@@ -123,7 +125,7 @@ div.Messenger{
 
 }
 
-div.Messenger_Group{
+#Messenger_Group{
 	margin-top: 35%;
 	margin-right: 10%;
 	width: 60.5%;
@@ -230,7 +232,7 @@ div.New_Group{
 
 div.profil_work{
 	margin-top: 7%;
-	margin-left: 30%;
+	margin-left: 5%;
 	border: 1px solid black;
 	position: fixed;
 	width: 50%;
@@ -380,4 +382,8 @@ form#New_Group{
 
 form#Change_Profil_Information{
 	margin: 2%;
+}
+
+li.nav-item{
+	border-bottom: 1px solid black;
 }

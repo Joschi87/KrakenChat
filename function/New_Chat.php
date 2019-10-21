@@ -17,7 +17,8 @@
             while ($zeile1 = mysqli_fetch_array( $db_erg1, MYSQLI_ASSOC)){
 
             $Kennung = $zeile1["kennung"]; 
-            }
+			}
+			
     if($Kennung != 1){
         echo "<!DOCTYPE html>";
         echo "<center>";
@@ -66,8 +67,8 @@
     //Neuer Chat Funktion
 
 	if($Chat_Partner == ""){
-		header("refresh:10;url=close.html");
-		echo "Sie haben keinen Chat Partner eingetragen!<br />Dieses Fenster schließt sich in 10 Sekunden!";
+		print "<script text='text/javascript'>alert('Sie haben keinen Chat Partner eingetragen!<br />Dieses Fenster schließt sich in 10 Sekunden!')</script>";
+		header("refresh:0.1;url=close.html");
 	}else{
 
 		//Ueberprueft ob der Benutzername im System existiert.
@@ -105,9 +106,9 @@
 
 							$Random_Zahl = rand(10000000,99999999);
 
-							$Chat_ID_Nummer = $Random_Zahl . $User_ID_DB . $Chat_Partner_ID_DB;
+							$Chat_ID_Nummer = $Random_Zahl;
 
-							$Datenbank = "k72459_Projekt360";
+							$Datenbank = "KrakenChat";
 
 							//Die Datenbank-Tabelle für den Chat wird mit der Chat ID erstellt
 
@@ -121,22 +122,18 @@
 
 							if($Control_Datenbank_Table != 0){
 
-								header("refresh:10;url=close.html");
-								echo "Der Chat mit $Chat_Partner wurde erfolgreich erstellt!<br />Die Seite schließt sich in 10 Sekunden!";
+								print "<script text='text/javascript'>alert('Der Chat mit $Chat_Partner wurde erfolgreich erstellt!<br />Die Seite schließt sich in 10 Sekunden!')</script>";
+								header("refresh:0.1;url=close.html");
 
 							}else{
-
-								header("refresh:10;url=close.html");
-								echo "Ein Fehler ist beim einrichten des Chat aufgetretten!";
-
+								print "<script text='text/javascript'>alert('Ein Fehler ist beim einrichten des Chat aufgetretten!')</script>";
+								header("refresh:0.1;url=close.html");
 							}
 						}
 
 		}else{
-
-			header("refresh:10;url=close.html");
-			echo "Der Benutzername existiert nicht im System. Bitte Kontrollieren Sie den Benutzernamen($Chat_Partner). Diese Seite schließt sich in 10 Sekunden!";
-
+			print "<script text='text/javascript'>alert('Der Benutzername existiert nicht im System. Bitte Kontrollieren Sie den Benutzernamen($Chat_Partner). Diese Seite schließt sich in 10 Sekunden!')</script>";
+			header("refresh:0.1;url=close.html");
 		}
 
 	}

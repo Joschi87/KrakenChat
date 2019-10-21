@@ -9,21 +9,24 @@
 	<meta charset="utf-8" /> 
 	<link href="style.css" type="text/css" rel="stylesheet" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Start list of links for Bootstrap4 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- End list -->
+    <!--Settings for Bootstrap -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <center>
-        <div class="content">
+        <div class="container">
             <div class="login">
-                <form action="<?php require_once('function/login.php');?>" method="post" class="login">
-                    User:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="user" value=""/><br /><br />
-                    Passwort:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password" value="" /><br /><br />
-                    <input type="submit" value="Anmelden" />
+                <form action="function/login.php" method="post">
+                        <div class="form-qroup"><label for="user">User:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="form-control" name="user" value=""/></label></div>
+                        <div class="form-group"><label for="password">Passwort:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" class="form-control" name="password" value="" /></label></div>
+                        <button type="submit" class="btn btn-primary">Anmelden</button>
                 </form>
             </div>
-            <br /><br />
-            <center>
-            </center>
         </div>
-    </center>
 </body>
 </html>

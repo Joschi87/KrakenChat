@@ -5,6 +5,14 @@
 	<meta charset="utf-8" /> 
 	<link href="../style.css" type="text/css" rel="stylesheet" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Start list of links for Bootstrap4 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- End list -->
+    <!--Settings for Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php
 	
 		//Nutzer auslesen
@@ -55,13 +63,20 @@
     <header>
        <div id="top_bar" class="top_bar">
             <div class="menue">
-            	<a class="menue" href="../function/logout.php?User=<?php echo $User;?>"><div class="m_button"><p class="menue"><center>Ausloggen</center></p></div></a>&nbsp;&nbsp;&nbsp;
-                <a class="menue" href="../profile/index.php?User=<?php echo $User;?>"><div class="m_button" id="up"><p class="menue"><center>Home</center></p></div></a>&nbsp;&nbsp;&nbsp;
-                <a class="menue" href="../profile/profil_work.php?User=<?php echo $User; ?>"><div class="m_button" id="up"><p class="menue"><center><?php echo $User; ?></center></p></div></a>
+				<ul class="nav">
+					<li class="nav-item">
+						<a class="menue" href="../function/logout.php?User=<?php echo $User;?>"><div class="m_button"><p class="menue"><center>Ausloggen</center></p></div></a>&nbsp;&nbsp;&nbsp;
+					</li>
+					<li class="nav-item">
+						<a class="menue" href="../profile/index.php?User=<?php echo $User;?>"><div class="m_button" id="up"><p class="menue"><center>Home</center></p></div></a>&nbsp;&nbsp;&nbsp;
+					</li>
+					<li class="nav-item">
+						<a class="menue" href="../profile/profil_work.php?User=<?php echo $User; ?>"><div class="m_button" id="up"><p class="menue"><center><?php echo $User; ?></center></p></div></a>
+					</li>
             </div>
             <div class="search">
             	<form action="../function/search.php?User=<?php echo $User;?>" target="_blank" method="post">
-            		<input type="text" name="Search_User" value="Nutzer suchen(Nachname)" />&nbsp;&nbsp;&nbsp;&nbsp;
+            		<input type="text" name="Search_User" placeholder="Nutzer suchen(Nachname)" />&nbsp;&nbsp;&nbsp;&nbsp;
             		<input type="submit" value="Suchen">
             	</form>
             </div>
@@ -73,18 +88,20 @@
 			<iframe src="../function/active_User.php?User=<?php echo $User;?>" id="activ_User" style="height: 50%;"></iframe>
 		</div>
 	</div>
-	<div class="Messenger_Control_Panel">
-		<div class="Messenger_Control_Panel_Button"><a href='../function/NewGroupChat.php?User=<?php echo $User;?>' target="_blank"><button class="m_Messenger_Control_Panel"><center><b>Gruppen erstellen</b></center></button></a></div>
+	<div class="container">
+		<div class="Messenger_Control_Panel">
+			<div class="Messenger_Control_Panel_Button"><a href='../function/NewGroupChat.php?User=<?php echo $User;?>' target="_blank"><button class="m_Messenger_Control_Panel"><center><b>Gruppen erstellen</b></center></button></a></div>
+		</div>
+		<div class="card" id="Messenger">
+			<p style="margin-left: 2%;">Einzel Chats:</p>
+			<iframe src="../function/loadChats.php?User=<?php echo $User; ?>" id="Chats">
+			</iframe>
+		</div>
+		<!--<div class="card" id="Messenger_Group">
+			<p style="margin-left: 2%;">Gruppen Chats:</p>
+			<iframe src="../function/loadGroupChat.php?User=<?php //echo $User; ?>" id="Chats">
+			</iframe>
+		</div>-->
 	</div>
-	<div class="Messenger">
-		<p style="margin-left: 2%;">Einzel Chats:</p>
-		<iframe src="../function/loadChats.php?User=<?php echo $User; ?>" id="Chats">
-		</iframe>
-    </div>
-    <div class="Messenger_Group">
-    	<p style="margin-left: 2%;">Gruppen Chats:</p>
-		<iframe src="../function/loadGroupChat.php?User=<?php echo $User; ?>" id="Chats">
-		</iframe>
-    </div>
 </body>
 </html>

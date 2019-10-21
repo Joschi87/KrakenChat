@@ -50,7 +50,7 @@
 
 	//Geburtstag des Nutzers auslesen
 
-	$sql_Geburtstag = "SELECT Geburtstag FROM Profil WHERE benutzername = '$Search_Profil'";
+	/*$sql_Geburtstag = "SELECT Geburtstag FROM Profil WHERE benutzername = '$Search_Profil'";
 	$db_erg_Geburtstag = mysqli_query($verbindung, $sql_Geburtstag);
 	if (!$db_erg_Geburtstag){
 		die('Ungültige Abfrage: ' . mysqli_error());
@@ -111,7 +111,7 @@
 
 		$GLOBALS['Standort_DB'] = $zeile_Standort["Standort"];
 
-	}
+	}*/
 
 	//Profilbild des Nutzer auslesen
 

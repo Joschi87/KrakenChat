@@ -20,10 +20,8 @@
     $Sessionnummer_Cookie = $_COOKIE["Sessionnummer"];
 
     if($Sessionnummer_DB != $Sessionnummer_Cookie){
-
-    	echo "Sie sind nicht angemeldet. Bitte melden Sie sich an. <a href='../index.php'>Hier klicken</a>";
-    	exit();
-
+    	print "<script text='text/javascript'>alert('Sie sind nicht angemeldet. Bitte melden Sie sich an. <a href='../index.php'>Hier klicken</a>')</script>";
+    	header("refresh:0.1;url=../index.php");
     }else{}
 
 ?>
