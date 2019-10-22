@@ -33,12 +33,6 @@ div.m_button:hover{
     border: 1px solid black;
 }
 
-div.login{
-	position: absolute;
-	margin-top: 10%;
-	
-}
-
 div.register_ebene{
     width: 60%;
     margin-left: 10%;
@@ -64,6 +58,11 @@ p.menue:hover{
     color: white;
 }
 /*Ende Style für die Menübar*/
+
+div.login{
+	position: absolute;
+	margin: 10%;
+}
 
 div.activ_User{
 	float: left;

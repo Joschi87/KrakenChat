@@ -48,7 +48,8 @@
 
 		$Ergebins = mysqli_query($verbindung, "SELECT * FROM `$Chat_ID` ORDER BY ID DESC");
 		
-		echo "<div id='ChatWindow'>";
+		print "<!-- Start list of links for Bootstrap4 --><link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'></script><script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script><!-- End list --><!--Settings for Bootstrap --><meta name='viewport' content='width=device-width, initial-scale=1'>";
+		print "<div class='container'>";
 
 		//Anzeigen des Inhaltes der Datenbank Tabelle
 
@@ -61,7 +62,7 @@
 
 	    	$GLOBALS['ausgabe'] = $ausgabe_3;
 
-	    	echo "<div id='creator'>" .$row_2['Sender'] .":</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class='Nachricht' id='message'>" .$ausgabe ."</div><p style='font-size: 8pt;' id='DateTime'>" .$row_2['DatumUhrzeit'] ."</p><br />";
+	    	echo "" .$row_2['Sender'] .":</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class='Nachricht' id='message'>" .$ausgabe ."</div><p style='font-size: 8pt;' id='DateTime'>" .$row_2['DatumUhrzeit'] ."</p><br />";
 
 	    }
 
