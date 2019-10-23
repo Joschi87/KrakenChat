@@ -17,14 +17,14 @@
 
         if($user == "" or $passwort == ""){
             
-            echo "Sie haben vergessen Ihre Logindaten einzugeben.";
-            exit();
+            print "<script text='text/javascript'>alert('Sie haben vergessen Ihre Logindaten einzugeben.')</script>";
+            header("refresh:0.1;url=../index.php");
             
         }else{
 
-            if (!preg_match("#^[a-zA-Z0-9]+$#", $user) or (!preg_match("#^[a-zA-Z0-9]+$#", $passwort))) {
-                print("Sie haben nicht erlaubte Zeichen genutzt");
-                exit();
+            if (!preg_match("#^[a-zA-Z0-9]+$#", $user)){
+                print("<script text='text/javascript'>alert('Sie haben falsche Zeichen genutzt! Erlaubt sind nur a-z, A-Z und 0-9')</script>");
+                header("refresh:0.1;url=../index.php");
             }else{
             
             //Anmeldeinformationen werden in der Login Datenbank gesucht
@@ -118,11 +118,8 @@
                     
                     
             }else{
-                    echo "<!DOCTYPE html>";
-                    echo "<center>";
-                    echo "Dieser Administrator '<b>$user</b>' exestiert bei uns im System nicht. Oder Sie haben das Falsche Passwort eingeben. <a href='../index.php'>Versuchen Sie es erneut</a>";
-                    echo "</center>";
-                    echo "</html>";
+                    echo "<!DOCTYPE html><center><script type='text/javascript'>alert('Dieser Nutzer <b><?php echo '$user';?></b> exestiert nicht im System.')</script></center></html>";
+                    header("refresh:0.1;url=../index.php");
                 }
             }
         }

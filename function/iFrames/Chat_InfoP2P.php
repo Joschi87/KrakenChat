@@ -39,12 +39,6 @@
 
 				$Empfaenger_AccountInfo_Vorname = $row_AccountInfo_download_Empfaenger['Vorname'];
 				$Empfaenger_AccountInfo_Nachname = $row_AccountInfo_download_Empfaenger['Nachname'];
-				$Empfaenger_AccountInfo_Mail = $row_AccountInfo_download_Empfaenger['Mail'];
-				$Empfaenger_AccountInfo_Geburtstag = $row_AccountInfo_download_Empfaenger['Geburtstag'];
-				$Empfaenger_AccountInfo_TelefonnummerBeruflich = $row_AccountInfo_download_Empfaenger['Telefonnummer_Beruflich'];
-				$Empfaenger_AccountInfo_TelefonnummerMobil = $row_AccountInfo_download_Empfaenger['Telefonnummer_Mobil'];
-				$Empfaenger_AccountInfo_Abteilung = $row_AccountInfo_download_Empfaenger['Abteilung'];
-				$Empfaenger_AccountInfo_Standort = $row_AccountInfo_download_Empfaenger['Standort'];
 
 			}
 
@@ -60,11 +54,6 @@
 				$Ersteller_AccountInfo_Vorname = $row_AccountInfo_download_Ersteller['Vorname'];
 				$Ersteller_AccountInfo_Nachname = $row_AccountInfo_download_Ersteller['Nachname'];
 				$Ersteller_AccountInfo_Mail = $row_AccountInfo_download_Ersteller['Mail'];
-				$Ersteller_AccountInfo_Geburtstag = $row_AccountInfo_download_Ersteller['Geburtstag'];
-				$Eersteller_AccountInfo_TelefonnummerBeruflich = $row_AccountInfo_download_Ersteller['Telefonnummer_Beruflich'];
-				$Ersteller_AccountInfo_TelefonnummerMobil = $row_AccountInfo_download_Ersteller['Telefonnummer_Mobil'];
-				$Ersteller_AccountInfo_Abteilung = $row_AccountInfo_download_Ersteller['Abteilung'];
-				$Ersteller_AccountInfo_Standort = $row_AccountInfo_download_Ersteller['Standort'];
 
 			}
 		}else{
@@ -76,14 +65,9 @@
 		<p class="ChatInfo" id="AllgemeineInfo">
 			Vorname: <?php echo $Empfaenger_AccountInfo_Vorname;echo $Ersteller_AccountInfo_Vorname; ?><br />
 			Nachname: <?php echo $Empfaenger_AccountInfo_Nachname;echo $Ersteller_AccountInfo_Nachname; ?><br />
-			Geburtstag: <?php echo $Empfaenger_AccountInfo_Geburtstag;echo $Ersteller_AccountInfo_Geburtstag; ?><br />
 		</p>
 		<p class="ChatInfo" id="BeruflicheInfo">
 			E-Mail Adresse: <?php echo $Empfaenger_AccountInfo_Mail;echo $Ersteller_AccountInfo_Mail; ?><br />
-			Telefonnummer Festnetz: <?php echo $Empfaenger_AccountInfo_TelefonnummerBeruflich;echo $Eersteller_AccountInfo_TelefonnummerBeruflich; ?><br />
-			Telefonnummer Mobil: <?php echo $Empfaenger_AccountInfo_TelefonnummerMobil;echo $Ersteller_AccountInfo_TelefonnummerMobil; ?><br />
-			Standort: <?php echo $Empfaenger_AccountInfo_Standort;echo $Ersteller_AccountInfo_Standort; ?><br />
-			Abteilung: <?php echo $Empfaenger_AccountInfo_Abteilung;echo $Ersteller_AccountInfo_Abteilung; ?><br />
 		</p>
 	</div>
 </body>

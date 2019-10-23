@@ -5,6 +5,14 @@
 	<meta charset="utf-8" /> 
 	<link href="../style.css" type="text/css" rel="stylesheet" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Start list of links for Bootstrap4 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- End list -->
+    <!--Settings for Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php
 	
 		//Nutzer auslesen
@@ -82,34 +90,36 @@
 			<iframe src="../function/active_User.php?User=<?php echo $User;?>" id="activ_User" style="height: 50%;"></iframe>
 		</div>
 	</div>
-	<div class="profil_work">
-		<div class="Profilbild">
-			<img src="<?php echo $Profilbild_DB; ?>" style="height: 200px; width: 150px;" alt="Leider ist keine Bild als Profilbild hinterlegt." /><br /><br />
-			<button id="upload">Neues Profilbild hochladen</button><br />
-			<form action="../function/upload.php" method="post" enctype="multipart/form-data" target="_blank" id="Upload-Form" style="display: none;">
-                <input type="file" name="file" id='file' required /><br /><br />
-                <div id="upload" onclick="startUpload()" style="border: 1px solid black; width: 100px; background: lightgray;">
-                    <center><input type="submit" value="Hochladen" /></center>
-                </div>
-            </form>
-		</div>
-		<div class="Information">
-			<form action="../function/Change_Profil_Information.php?User=<?php echo $User; ?>" method="post" target="_blank" id="Change_Profil_Information">
-				<p class="Profil_Information"><b>Allgemeine Informationen:</b></p><br />
-				Vorname:<br />
-				<input type="text" name="profil_work_Vorname" class="Profil_Information" value="<?php echo $Vorname_DB; ?> " /><br />
-				Nachname:<br />
-				<input type="text" name="profil_work_Nachname" class="Profil_Information" value="<?php echo $Nachname_DB; ?>" /><br />
-				<br /><br /><br />
-				<p class="Profil_Information"><b>Weitere Informationen:</b></p><br />
-				Geburtstag:<br />
-				<input type="text" name="profil_work_Geburtstag" class="Profil_Information" value="<?php echo $Geburtstag_DB; ?>" /><br />
-				Telefonnummer Gesch&auml;ftlich:<br />
-				<input type="text" name="profil_work_Telefonnummer_beruflich" class="Profil_Information" value="<?php echo $Telefonnummer_Beruflich_DB; ?>" /><br />
-				Telefonnummer Mobil:<br />
-				<input type="text" name="profil_work_Telefonnummer_mobil" class="Profil_Information" value="<?php echo $Telefonnummer_Mobil_DB; ?>" /><br />
-				<input type="submit" value="&Auml;nderungen speichern" />
-			</form>
+	<div class="container">
+		<div class="profil_work">
+			<div class="Profilbild">
+				<img src="<?php echo $Profilbild_DB; ?>" style="height: 200px; width: 150px;" alt="Leider ist keine Bild als Profilbild hinterlegt." /><br /><br />
+				<button id="upload">Neues Profilbild hochladen</button><br />
+				<form action="../function/upload.php" method="post" enctype="multipart/form-data" target="_blank" id="Upload-Form" style="display: none;">
+					<input type="file" name="file" id='file' required /><br /><br />
+					<div id="upload" onclick="startUpload()" style="border: 1px solid black; width: 100px; background: lightgray;">
+						<center><input type="submit" value="Hochladen" /></center>
+					</div>
+				</form>
+			</div>
+			<div class="Information">
+				<form action="../function/Change_Profil_Information.php?User=<?php echo $User; ?>" method="post" target="_blank" id="Change_Profil_Information">
+					<p class="Profil_Information"><b>Allgemeine Informationen:</b></p><br />
+					Vorname:<br />
+					<input type="text" name="profil_work_Vorname" class="Profil_Information" value="<?php echo $Vorname_DB; ?> " /><br />
+					Nachname:<br />
+					<input type="text" name="profil_work_Nachname" class="Profil_Information" value="<?php echo $Nachname_DB; ?>" /><br />
+					<br /><br /><br />
+					<p class="Profil_Information"><b>Weitere Informationen:</b></p><br />
+					Geburtstag:<br />
+					<input type="text" name="profil_work_Geburtstag" class="Profil_Information" value="<?php echo $Geburtstag_DB; ?>" /><br />
+					Telefonnummer Gesch&auml;ftlich:<br />
+					<input type="text" name="profil_work_Telefonnummer_beruflich" class="Profil_Information" value="<?php echo $Telefonnummer_Beruflich_DB; ?>" /><br />
+					Telefonnummer Mobil:<br />
+					<input type="text" name="profil_work_Telefonnummer_mobil" class="Profil_Information" value="<?php echo $Telefonnummer_Mobil_DB; ?>" /><br />
+					<input type="submit" value="&Auml;nderungen speichern" />
+				</form>
+			</div>
 		</div>
 	</div>
 </body>

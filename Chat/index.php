@@ -30,8 +30,8 @@
 		require_once("../function/Control_Cookie.php");
 
         //laedt die Chat ID aus dem Header um den Chat auf zubauen
-        $Chat_ID = $_GET["ChatID"];
-        $GroupChat_ID = $_GET["GroupChatID"];
+
+
         $KindofChat = $_GET["KindofChat"];
 
 		//Auswertung ob eine Neue Benachrichtigung vorlag oder nicht
@@ -40,6 +40,8 @@
 
 		if($KindofChat == "P2P"){
 
+			$Chat_ID = $_GET["ChatID"];
+
 			if($Notice == "Neue Mitteilung"){
 				$Notification_Check = mysqli_query($verbindung, "UPDATE ChatConnection SET Notification = '' WHERE ChatID = '$Chat_ID'");
 			}else{
@@ -47,6 +49,8 @@
 			}
 		}
 		elseif($KindofChat == "GroupChat") {
+
+			$GroupChat_ID = $_GET["GroupChatID"];
 			
 			if($Notice == "Neue Mitteilung"){
 				$Notification_Check_Group = mysqli_query($verbindung, "UPDATE GroupChatConnection SET notification = '' WHERE GroupChatID = '$GroupChat_ID'");
@@ -68,18 +72,6 @@
             </div>
         </div> 
     </header>
-    <div class="Chat_Info">
-    	<!--iFrame zum laden der Informationen die es ueber diesen Chat gibt z.B. Beim P2P Chat Kontakt Daten ueber den CHat Parnter und im GroupChat wer ist alles Mitglied, Regeln und andere-->
-    	<?php
-    	if ($KindofChat == "P2P"){
-    		echo"<iframe src='../function/iFrames/Chat_InfoP2P.php?User=$User&ChatID=$Chat_ID' style='height: 250%;'></iframe>";
-    	}elseif ($KindofChat == "GroupChat") {
-    		echo"<iframe src='../function/iFrames/Chat_InfoGroup.php?User=$User&GroupChatID=$GroupChat_ID'  style='height: 250%;'></iframe>";
-    	}else{
-    		echo "Ein Fehler ist beim laden der Chat Informationen aufgetreten!";
-    	}
-    	?>
-    </div>
 	<div class="Messenger_For_Chat">
 		<div class="Activ_Chat">
 			<!--anzeigeflaeche der schon gesendeten Nachrichten-->
