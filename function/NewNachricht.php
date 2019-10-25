@@ -84,7 +84,7 @@
 
 	if($text == ""){
 		header("refresh:5;url=../Chat/index.php?User=$User&ChatID=$Chat_ID&KindofChat=$KindOfChat");
-		echo "Sie haben keine Nachricht eingegeben!<br />Diese Meldung schließt sich nach 5 Sekunden!";
+		echo "<script text='text/javascript'>alert('Sie haben keine Nachricht eingegeben!<br />Diese Meldung schließt sich nach 5 Sekunden!')</script>";
 	}else{
 
 		$NewNachricht = mysqli_query($verbindung, "INSERT INTO `$Chat_ID`(Nachricht, Sender, DatumUhrzeit) VALUES ('$ausgabe', '$User', '$LoaclTime')");
