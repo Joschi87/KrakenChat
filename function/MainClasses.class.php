@@ -6,10 +6,6 @@ class Message{
     
     //Class variable 
     public $databaseName = "KrakenChat";
-    public $user = NULL;
-    public $chat_ID = NULL;
-    public $kindOfChat = NULL;
-    public $text = NULL;
 
     function CheckingMessage($text) {
         //If the message empty or not
@@ -30,14 +26,14 @@ class Message{
 
         //Message insert into the database and creat a notification in the ChatConnection table
 
-        $newNachricht = $mysqli->query($verbindung, "INSERT INTO `$Chat_ID`(Nachricht, Sender, DatumUhrzeit) VALUES ('$ausgabe', '$User', '$LoaclTime')");
-        $newNotification = $mysqli->query($verbindung, "UPDATE ChatConnection SET Notification = 'Neue Mitteilung' WHERE ChatID = '$Chat_ID'");
+        $newNachricht = mysqli_query($verbindung, "INSERT INTO `$Chat_ID`(Nachricht, Sender, DatumUhrzeit) VALUES ('$ausgabe', '$User', '$LoaclTime')");
+        $newNotification = mysqli_query($verbindung, "UPDATE ChatConnection SET Notification = 'Neue Mitteilung' WHERE ChatID = '$Chat_ID'");
         
         if(is_bool($newNachricht) === TRUE AND is_bool($newNotification) === TRUE ){
             print "<script text='text/javascript'>console.log('Write message successfuly')";
-            $mysqli->close();
+            mysqli_close($verbindung);
         }else{
-            $mysqli->close();
+            mysqli_close($verbindung);
             print "<script text='text/javascript'>alert('Wirte message unsuccessfuly. Please try it again')";
             header("refresh:0,1;url=/Chat/index.php?User=$User&ChatID=$Chat_ID&KindofChat=$KindOfChat");
         }
