@@ -17,9 +17,9 @@
 
 		echo "<div class='All_Chats'>";
 
-		$review_for_User_are_Ersteller = mysqli_query($verbindung, "SELECT ChatID, Ersteller, Empfaenger, Notification FROM ChatConnection WHERE Ersteller = '$User' OR Empfaenger = '$User' ORDER BY Notification DESC");
+		$reviewForUserAreErsteller = mysqli_query($verbindung, "SELECT ChatID, Ersteller, Empfaenger, Notification FROM ChatConnection WHERE Ersteller = '$User' OR Empfaenger = '$User' ORDER BY Notification DESC");
 
-    	while ($row = mysqli_fetch_assoc($review_for_User_are_Ersteller)){
+    	while ($row = mysqli_fetch_assoc($reviewForUserAreErstellerreviewForUserAreErsteller)){
 
             $Ersteller = $row['Ersteller'];
             $Empfaenger = $row['Empfaenger'];
