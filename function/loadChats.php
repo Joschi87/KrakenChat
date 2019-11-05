@@ -12,49 +12,17 @@
 		require_once("connection.php");
         require_once("ZeitErkennung.php");
         require_once("Control_Cookie.php");
+        include_once("MainClasses.class.php");
 
-        echo "<link href='../style.css' type='text/css' rel='stylesheet' />";
+        print "<link href='../style.css' type='text/css' rel='stylesheet' />";
 
-		echo "<div class='All_Chats'>";
+		print "<div class='All_Chats'>";
 
-		$reviewForUserAreErsteller = mysqli_query($verbindung, "SELECT ChatID, Ersteller, Empfaenger, Notification FROM ChatConnection WHERE Ersteller = '$User' OR Empfaenger = '$User' ORDER BY Notification DESC");
+        $loadChat = new Chat($User);
+        
+        $loadChat->LoadChats();
 
-    	while ($row = mysqli_fetch_assoc($reviewForUserAreErstellerreviewForUserAreErsteller)){
-
-            $Ersteller = $row['Ersteller'];
-            $Empfaenger = $row['Empfaenger'];
-
-            if ($Ersteller == $User) {
-
-                $FullName_from_Empfaenger = mysqli_query($verbindung, "SELECT Vorname, Nachname FROM Profil WHERE benutzername = '$Empfaenger'");
-
-                while ($row_FullName_Empfaenger = mysqli_fetch_assoc($FullName_from_Empfaenger)){
-
-                        echo "<span id='Chat_open'>".$row_FullName_Empfaenger['Vorname'] ."&nbsp;&nbsp;&nbsp;" .$row_FullName_Empfaenger['Nachname'] ."&nbsp;&nbsp;&nbsp;" .$row['Notification'];
-
-                    }
-            }elseif ($Empfaenger == $User) {
-
-                $FullName_from_Ersteller = mysqli_query($verbindung, "SELECT Vorname, Nachname FROM Profil WHERE benutzername = '$Ersteller'");
-
-                while ($row_FullName_Ersteller = mysqli_fetch_assoc($FullName_from_Ersteller)){
-
-                        echo "<span id='Chat_open'>".$row_FullName_Ersteller['Vorname'] ."&nbsp;&nbsp;&nbsp;" .$row_FullName_Ersteller['Nachname'] ."&nbsp;&nbsp;&nbsp;" .$row['Notification'];
-                    }
-            }else{
-                echo "Ein Fehler ist aufgetretten!";
-            }
-
-    	   
-
-    	   $ChatID_DB = $row['ChatID'];
-           $Notice = $row['Notification']; 
-
-    	   echo "<a href='../Chat/index.php?User=$User&ChatID=$ChatID_DB&Notice=$Notice&KindofChat=P2P' target='_blank'><button id='Chat_Button_open'>&Ouml;ffnen</button></a><a href='../function/Delete_Chat.php?User=$User&Delete_Chat_ID_Nummer=$ChatID_DB' target='_blank'><button id='Chat_Button_delete'>Löschen</button></a></span><br />";
-          
-          }
-
-        echo "</div>";
+        print "</div>";
 ?>
 </body>
 </html>
